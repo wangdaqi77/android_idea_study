@@ -20,3 +20,4 @@
     15.手撸EventBus（老版本，数据容器思想）
     16.手撸Lifecycler、Livedata（数据容器绑定生命周期）
     17.手撸app后台防杀（注册息屏广播1px透明activity，本地远服务互拉，JobScheduler）
+    18.最佳适配方案（虽然很low，但是适配最精准，实际屏幕分辨率px与UI基准分辨率的比例）
