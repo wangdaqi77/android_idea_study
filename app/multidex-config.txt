@@ -1,0 +1,2 @@
+com/example/wongki/modularization/MainActivity.class
+com/example/wongki/modularization/MainApp.class

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/black">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_result"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="result:"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <Button
+                android:id="@+id/openLogin"
+                android:layout_width="1080px"
+                android:layout_height="wrap_content"
+                android:onClick="openLogin"
+                android:text="打开登录" />
+            <Button
+                android:id="@+id/startKeep"
+                android:layout_width="540px"
+                android:layout_height="wrap_content"
+                android:onClick="startKeep"
+                android:text="开启保活" />
+            <Button
+                android:layout_width="320dp"
+                android:layout_height="wrap_content"
+                android:onClick="stopKeep"
+                android:text="关闭保活" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="openEventTest"
+                android:text="打开事件巴士" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="openAOPTest"
+                android:text="打开AOP" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="loadPluginActivity"
+                android:text="加载PluginActivity" />
+
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="startAnimator"
+                android:text="开启动画" />
+
+            <ImageView
+                android:id="@+id/iv"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@color/colorAccent" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="startFireworks"
+                android:text="烟花" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="startHotFixTest"
+                android:text="测试热修复" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="openGlide"
+                android:text="测试Glide" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="openTestJNI"
+                android:text="测试JNI" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="openBug"
+                android:text="打开Bug" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="openSophix"
+                android:text="测试Sophix" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="openCustomView"
+                android:text="自定义View" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="showNotification"
+                android:text="显示一条通知" />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="openSmallRedBook"
+                android:text="打开小红书启动界面" />
+        </LinearLayout>
+
+<!--        <android.support.percent.PercentRelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"></android.support.percent.PercentRelativeLayout>-->
+        <com.example.wongki.modularization.Fireworks
+            android:id="@+id/fireworks"
+            android:layout_width="5dp"
+            android:layout_height="5dp"
+            android:layout_centerInParent="true" />
+    </RelativeLayout>
+</ScrollView>

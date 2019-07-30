@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.wongki.modularization">
+
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY" /> <!-- 网络权限 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" /> <!-- 外部存储读权限，调试工具加载本地补丁需要 -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:name=".MainApp"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".MapActivity" />
+        <activity android:name=".CustomRecyclerViewActivity" /> <!-- <activity android:name=".MaterialDesignActivity"></activity> -->
+        <activity android:name=".SmallRedBookActivity" />
+        <activity android:name=".CustomViewActivity" />
+        <activity android:name=".GlideTestActivity" />
+        <activity android:name=".tinker.BugActivity" />
+        <activity android:name=".MaterialDesignActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".tinker.TestHotFixMainActivity" />
+        <activity
+            android:name=".keep.KeepActivity"
+            android:excludeFromRecents="true"
+            android:taskAffinity="com.example.wongki.modularization.keep"
+            android:theme="@style/KeepTheme" />
+
+        <service android:name=".keep.ForegroundService" />
+        <service android:name=".keep.ForegroundService$InnerService" />
+        <service android:name=".keep.LocalService" />
+        <service
+            android:name=".keep.RemoteService"
+            android:process=":remote_keep" />
+        <service
+            android:name=".keep.KeepJobService"
+            android:exported="true"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+
+        <meta-data
+            android:name="com.taobao.android.hotfix.IDSECRET"
+            android:value="25945607" />
+        <meta-data
+            android:name="com.taobao.android.hotfix.APPSECRET"
+            android:value="0b2a807ba79985c07c28ca6bd504354b" />
+        <meta-data
+            android:name="com.taobao.android.hotfix.RSASECRET"
+            android:value="MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDbgvzlHAG/wj4Y+VD1aB8nXSi00HC52aRQR+UUFPloptsBUj1YMjO0OtUsUX+e+d6cZYQhlmCOsqgJd647mgB9eyG5I+6+uRik9vTvifpiz1Q5geDNhrZdma8SLUZU19YQF1awmfswonpY2ZI71iGEAYdmN7+hHwN2WM9eLO4FNdhslpzK2zBgyiStFf4gb+GhVa5uVyEE0qvUv/tunp2zOVtL1FlWOU1SyDSED57CRAXBo7MeJimy8f90Ec+BCYAj3TVEk7G4rHx2DbjJ1pw8AUuE0GeZxsPuEW3RCoU/puMmfWAinzMAqAXh5uZByqKa1G448Rc2BElO/aKDqr2FAgMBAAECggEAPJx+mASTtw87dknhQOHvOD9Q7hxgA/FEnaY8ar8f3vWzoznCFohGHo3gLsySIKN+BFFDmsKbBsvt+i9BvNNZL0zAkw6I7cDOPT6zgzDmIkJ9TyO9nwKDeHTnEm3N7b9rLCZFmZ3q7hLvFXl+F2eY+YoyiNb74tFdc2AyYh6l2mnwy1KQIH+QuwHGqbFXubRp4A0heyRY1Dz8Y48TyeEXV6IOEfXrdhOeMw6hrK35Q8wEAV3TCuG9/poPIu7JSRCGVgezSXlJBkWP31PX2viPuoi+87AEDZ01m8gJx3SybKvryKyPgxJLyhh1ngpXQhFwS+aCKgN8hX7hfYVTDxMQQQKBgQD1TRGRIz0tegJXdWIWG1bHnvxIQb7vL+Ri/LaUvdV2i/NO7J4QbD6fdleYCgx0WEk7HxRewSAkkGOAnSxEAdoTvhtXEQcWPcXliSw5eWez3invkgOeIL03ZbsC2xdA8XfqYUMoeof5F6oJ02gs5yn6ie/mQ/viAgIc5LAjE1c+PwKBgQDlFfcwgZhV0l+oYwxjcyhxUQTzEntkaY81mLkrfKgWu6AN5kkbs3E5pmMwkyRa09YDQlYAQ9TG4mLXnE1EFgVUw7g6wuBSJkQ1+qKyfFbDbZDUpH9+IeAU5LiTCBRmdvMYnttC+q6rXJiVp7vDXTiAuBFgHLcYjmLzpxgSRtFbOwKBgDSEZoFrSPrGh1/QGsre2YptaFfT85vj5gKnVjOsHNp/hfzcvc6ITjP3szMy243BJRSKR+Mtd8M8QoFTpRl+SAE4D0RpudmyKf9FiflYG7KvmszWtv2QxtHobsxiuazGxcShRC6TZS8YOOhXoZMTfrJL+9eRsIino2oqL+eiiWgjAoGBAJDIzS2u+mRjTWnTD+Vaxti3Z/VoXOwdexFYsM83PdUASCwAu3vycUEKU+5DUNrGv5/XsRsBw9ze/7Fda8f4Uu47tJgOyk+hN8MV4PYFd6CUAtEiFiHVrxYFaFIk7R/FVebdn545aWOMZjNPi2/x3uAbdX/VJjMy6n8rwB7s+yw5AoGBAOVgyCL2GbsB4UitB26NInpnlEhLgliC8EIzoHGQw7CwLmT8TxwPgkElKG5FubE5ZOmVFWKVVsrRVcfGc9y0nDzyjt6jHnDyzGIQJWEvzbO30zBWuInGyXlYyeOP5gfoBcOK6ohnopqzfHhaO4MsRyRa/qWEfVBlxUmycK4pu7Yl" />
+    </application>
+
+</manifest>

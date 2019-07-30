@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.wongki.commonlib">
+
+    <application>
+        <activity android:name=".event.FirstActivity" />
+        <activity android:name=".event.SecondActivity" />
+        <activity android:name=".inject.view.TestInjectViewActivity" />
+        <activity android:name=".aop.TestAopActivity" />
+        <activity android:name=".plugin.ProxyActivity" />
+    </application>
+
+</manifest>
