@@ -33,11 +33,6 @@
         <activity android:name=".GlideTestActivity" />
         <activity android:name=".tinker.BugActivity" />
         <activity android:name=".MaterialDesignActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".tinker.TestHotFixMainActivity" />
         <activity
