@@ -1,3 +1,1 @@
 include ':app', ':commonlib', ':commonlogin', ':pluginapp', ':view', ':viewtouch'
-include ':vlayout'
-include ':examples_vlayout'
