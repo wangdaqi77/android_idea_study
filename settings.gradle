@@ -1,1 +1,1 @@
-include ':app', ':commonlib', ':commonlogin', ':pluginapp', ':view', ':viewtouch'
+include ':app', ':commonlib', ':commonlogin', ':pluginapp', ':view', ':viewtouch', ':worklib'

@@ -44,6 +44,7 @@
         <service android:name=".keep.ForegroundService" />
         <service android:name=".keep.ForegroundService$InnerService" />
         <service android:name=".keep.LocalService" />
+        <service android:name="com.wongki.work.OCRWorkService" />
         <service
             android:name=".keep.RemoteService"
             android:process=":remote_keep" />

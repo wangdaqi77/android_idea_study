@@ -1,0 +1,42 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+
+    lintOptions {
+        abortOnError false
+    }
+
+
+    compileOptions {
+        sourceCompatibility 1.8
+        targetCompatibility 1.8
+    }
+    compileSdkVersion common_compileSdkVersion.toInteger()
+    defaultConfig {
+        minSdkVersion common_minSdkVersion.toInteger()
+        targetSdkVersion common_targetSdkVersion.toInteger()
+        versionCode 1
+        versionName "1.0"
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [moduleName: project.getName()]
+                includeCompileClasspath true
+            }
+        }
+
+    }
+
+
+}
+repositories {
+    maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+    maven { url "http://10.60.0.100:8081/repository/ocr-sdk/" }
+}
+dependencies {
+    api fileTree(include: ['*.jar'], dir: 'libs')
+    api project(':commonlib')
+}

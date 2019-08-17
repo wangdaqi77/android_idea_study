@@ -137,7 +137,7 @@ class SortTest {
         val totalSafeNum = len - minesLen // 安全格子的总数量
         var safeNum = 0 // 记忆当前踩过格子的安全数量
         while (true) {
-Proxy.newProxyInstance()
+//Proxy.newProxyInstance()
             printMatrix(row, matrix)
 
             println("请点击（ex:点击第一个格子点输入:0,0） :")

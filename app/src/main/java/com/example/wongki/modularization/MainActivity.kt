@@ -18,7 +18,6 @@ import com.example.wongki.commonlib.modularization.ProviderServices
 import com.example.wongki.commonlib.obersever.HasParamHasReturnFunction
 import com.example.wongki.commonlib.obersever.InterfaceManager
 import com.example.wongki.commonlib.plugin.PluginManager
-import com.example.wongki.commonlib.utils.AnimatorPath
 import com.example.wongki.modularization.bean.TestHttpBean
 import com.example.wongki.modularization.keep.KeepHelper
 import com.example.wongki.modularization.sophix.sophix.test.SpohixTest
@@ -29,13 +28,15 @@ import android.app.NotificationManager
 import android.support.v4.app.NotificationCompat
 import android.app.PendingIntent
 import android.content.res.Configuration
+import android.graphics.drawable.BitmapDrawable
 import android.view.MotionEvent
 import android.view.animation.LinearInterpolator
 import com.example.wongki.commonlib.utils.UIAdapterUtils
 import com.example.wongki.commonlib.utils.UIScaleHelper
-import com.example.wongki.modularization.animator.MyObjectAnimator
-import com.example.wongki.modularization.view.ScreenAdapter
+import com.example.wongki.modularization.other.Study
 import com.example.wongki.viewtouch.TouchTest
+import com.wongki.work.OCRCore
+import com.wongki.work.OCRWorkListener
 import com.taobao.sophix.SophixManager
 
 
@@ -43,6 +44,10 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        //Study.test()
+        //Study.test1()
+
+        Study.testQuickSort()
         // ScreenAdapter.adapter(this, 320, false)
         PluginManager.init(this)
         setContentView(R.layout.activity_main)
@@ -72,6 +77,10 @@ class MainActivity : AppCompatActivity() {
 //        Handler().postDelayed({
 //            LogGrep.get(this@MainActivity) //抓取logcat日志
 //        }, 2000)
+    }
+
+    override fun onStart() {
+        super.onStart()
     }
 
     override fun dispatchTouchEvent(ev: MotionEvent): Boolean {
@@ -127,7 +136,7 @@ class MainActivity : AppCompatActivity() {
 //        animator.setInterpolator(LinearInterpolator())
 //        animator.setDuration(5000L)
 //        animator.start()
-        val animator = ObjectAnimator.ofFloat(imageView, "translationX", 0f, 100f,400f)
+        val animator = ObjectAnimator.ofFloat(imageView, "translationX", 0f, 100f, 400f)
         animator
         animator.setInterpolator(LinearInterpolator())
         animator.setDuration(5000L)
